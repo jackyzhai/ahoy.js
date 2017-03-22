@@ -35,7 +35,9 @@
   // legacy
   ahoy.configure(ahoy);
 
-  var $ = window.jQuery || window.Zepto || window.$;
+  // I comment this out so that ahoy doens't use the global $
+  // we can use webpack imports-loader to inject a $ variable without exposing $ to the global space.
+  // var $ = window.jQuery || window.Zepto || window.$;
   var visitId, visitorId, track;
   var visitTtl = 4 * 60; // 4 hours
   var visitorTtl = 2 * 365 * 24 * 60; // 2 years
